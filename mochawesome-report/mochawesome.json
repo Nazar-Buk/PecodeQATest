@@ -1,0 +1,327 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 5,
+    "pending": 0,
+    "failures": 3,
+    "start": "2021-10-03T22:42:34.519Z",
+    "end": "2021-10-03T22:42:34.691Z",
+    "duration": 172,
+    "testsRegistered": 8,
+    "passPercent": 62.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38b60216-2d90-4e2a-9f59-b1786e232df2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "18180414-a2f8-4f97-8de1-7d32b3e08056",
+          "title": "scenarious",
+          "fullFile": "C:\\Users\\user\\Desktop\\QATest\\test\\mochaChai.js",
+          "file": "\\test\\mochaChai.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"scenarious\"",
+              "fullTitle": "scenarious \"before each\" hook in \"scenarious\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = new Builder().forBrowser(\"chrome\").build();\ndriver.get(\"https://www.pecodesoftware.com/qa-portal/registerlogin/registerlogin.php\");",
+              "err": {},
+              "uuid": "b49abd93-554a-4dc8-bcbb-426129ae3555",
+              "parentUUID": "18180414-a2f8-4f97-8de1-7d32b3e08056",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"scenarious\"",
+              "fullTitle": "scenarious \"after each\" hook in \"scenarious\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver.quit();",
+              "err": {},
+              "uuid": "9854b988-45ff-4a4a-9b32-358441426c1c",
+              "parentUUID": "18180414-a2f8-4f97-8de1-7d32b3e08056",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "test unSuccessful login",
+              "fullTitle": "scenarious test unSuccessful login",
+              "timedOut": false,
+              "duration": 4,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// driver.sleep(1000);\n// driver.manage().setTimeouts({ implicit: 5000, pageLoad: 3000, script: 3000 });\ndriver.findElement(By.name(\"username\")).sendKeys(\"Nazar Buk\");\n// driver.sleep(1000);\ndriver.findElement(By.name(\"password\")).sendKeys(\"Nazar Buk\");\n// driver.sleep(1000);\ndriver.findElement(By.css(\".btn\")).click();\nlet helpBlock = driver.findElement(By.css('.help-block')).isDisplayed();\nif (helpBlock) {\n    helpBlock = true\n} else {\n    helpBlock = false\n}\ndriver.takeScreenshot().then(function (data) {\n    fs.writeFileSync('imgUnSuccessLogin.png', data, 'base64');\n});\nassert.strictEqual(helpBlock, false);",
+              "err": {
+                "message": "AssertionError: expected true to equal false",
+                "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\mochaChai.js:145:20)\n    at processImmediate (internal/timers.js:464:21)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "3aaf6093-ef0b-46bf-905e-c0f4110232b4",
+              "parentUUID": "18180414-a2f8-4f97-8de1-7d32b3e08056",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+              "title": "Is elements available?",
+              "fullFile": "C:\\Users\\user\\Desktop\\QATest\\test\\mochaChai.js",
+              "file": "\\test\\mochaChai.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Is username available?",
+                  "fullTitle": "scenarious Is elements available? Is username available?",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "let username = driver.findElement(By.name(\"username\")).isDisplayed();\nif (username) {\n    username = true\n} else {\n    username = false\n}\nassert.strictEqual(username, true);",
+                  "err": {},
+                  "uuid": "715115eb-a9a9-42af-b94f-6168cc3f4c0b",
+                  "parentUUID": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Is tipsUsername available?",
+                  "fullTitle": "scenarious Is elements available? Is tipsUsername available?",
+                  "timedOut": false,
+                  "duration": 2,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "let helpBlock = driver.findElement(By.css('.help-block')).isDisplayed();\nif (helpBlock) {\n    helpBlock = true\n} else {\n    helpBlock = false\n}\nassert.strictEqual(helpBlock, false);",
+                  "err": {
+                    "message": "AssertionError: expected true to equal false",
+                    "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\mochaChai.js:50:24)\n    at processImmediate (internal/timers.js:464:21)",
+                    "diff": "- true\n+ false\n"
+                  },
+                  "uuid": "6dadc539-c137-4c0f-8ccd-2a5b807e90c5",
+                  "parentUUID": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Is password available?",
+                  "fullTitle": "scenarious Is elements available? Is password available?",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "let password = driver.findElement(By.name(\"password\")).isDisplayed();\nif (password) {\n    password = true\n} else {\n    password = false\n}\nassert.strictEqual(password, true);",
+                  "err": {},
+                  "uuid": "cd2c5626-8903-466d-875f-29c0581d7e2b",
+                  "parentUUID": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Is tipsPassword available?",
+                  "fullTitle": "scenarious Is elements available? Is tipsPassword available?",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "let helpBlock = driver.findElement(By.css('.help-block')).isDisplayed();\nif (helpBlock) {\n    helpBlock = true\n} else {\n    helpBlock = false\n}\ndriver.takeScreenshot().then(function (data) {\n    fs.writeFileSync('imgtipsPassword.png', data, 'base64');\n})\nassert.strictEqual(helpBlock, false);",
+                  "err": {
+                    "message": "AssertionError: expected true to equal false",
+                    "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\mochaChai.js:75:24)\n    at processImmediate (internal/timers.js:464:21)",
+                    "diff": "- true\n+ false\n"
+                  },
+                  "uuid": "631e3594-7996-44b5-8eb3-e96d0063ed08",
+                  "parentUUID": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Is button available?",
+                  "fullTitle": "scenarious Is elements available? Is button available?",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "let button = driver.findElement(By.css(\".btn\")).isDisplayed();\nif (button) {\n    button = true\n} else {\n    button = false\n}\nassert.strictEqual(button, true);",
+                  "err": {},
+                  "uuid": "ca97fb0b-7e4c-4890-b7d9-ecdf62d2d5ef",
+                  "parentUUID": "a29ec80e-7ebd-4ee2-86e2-f1318199a74b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "715115eb-a9a9-42af-b94f-6168cc3f4c0b",
+                "cd2c5626-8903-466d-875f-29c0581d7e2b",
+                "ca97fb0b-7e4c-4890-b7d9-ecdf62d2d5ef"
+              ],
+              "failures": [
+                "6dadc539-c137-4c0f-8ccd-2a5b807e90c5",
+                "631e3594-7996-44b5-8eb3-e96d0063ed08"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 4,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3106a2a6-31cf-47c3-bb60-493fd0fe16a8",
+              "title": "Is error messages appears?",
+              "fullFile": "C:\\Users\\user\\Desktop\\QATest\\test\\mochaChai.js",
+              "file": "\\test\\mochaChai.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Is error password appear ?",
+                  "fullTitle": "scenarious Is error messages appears? Is error password appear ?",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "driver.findElement(By.name(\"username\")).sendKeys(\"Nazar Buk\");\ndriver.findElement(By.css(\".btn\")).click();\nlet helpBlock = driver.findElement(By.css('.help-block')).isDisplayed();\nif (helpBlock) {\n    helpBlock = true\n} else {\n    helpBlock = false\n}\ndriver.takeScreenshot().then(function (data) {\n    fs.writeFileSync('imgPasswordAppear.png', data, 'base64');\n})\nassert.strictEqual(helpBlock, true);",
+                  "err": {},
+                  "uuid": "b59179ed-ad03-4ad0-950b-bd64040d6658",
+                  "parentUUID": "3106a2a6-31cf-47c3-bb60-493fd0fe16a8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Is error username appear ?",
+                  "fullTitle": "scenarious Is error messages appears? Is error username appear ?",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "driver.findElement(By.name(\"password\")).sendKeys(\"Nazar Buk\");\ndriver.findElement(By.css(\".btn\")).click();\nlet helpBlock = driver.findElement(By.css('.help-block')).isDisplayed();\nif (helpBlock) {\n    helpBlock = true\n} else {\n    helpBlock = false\n}\nassert.strictEqual(helpBlock, true);",
+                  "err": {},
+                  "uuid": "043e476d-39b9-4f02-8800-db5064ca666e",
+                  "parentUUID": "3106a2a6-31cf-47c3-bb60-493fd0fe16a8",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b59179ed-ad03-4ad0-950b-bd64040d6658",
+                "043e476d-39b9-4f02-8800-db5064ca666e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [
+            "3aaf6093-ef0b-46bf-905e-c0f4110232b4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.0"
+    },
+    "marge": {
+      "options": {
+        "autoOpen": "true"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
